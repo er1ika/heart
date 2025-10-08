@@ -1,7 +1,7 @@
 import turtle
 import math
 import time
-def draw_heart(x_scale, y_scale, x2, y2=0):
+def heart(x_scale, y_scale, x2, y2=0):
     for t in range(0, 360, 5):
         angle = math.radians(t)
         x = x_scale * math.sin(angle) ** 3
@@ -11,7 +11,7 @@ def draw_heart(x_scale, y_scale, x2, y2=0):
             turtle.goto(x * 10 + offset, (y * 10 + offset + y2))
             turtle.pendown()
             turtle.goto(x * 10 + offset, (y * 10 - offset + y2))
-def draw_letter_b():
+def l_b():
     turtle.penup()
     turtle.goto(0, 140)
     turtle.pendown()
@@ -32,22 +32,22 @@ def draw_letter_b():
     turtle.penup()
     turtle.goto(0, 160)
     turtle.pendown()
-def draw_heart_outline():
+def heart_out():
     turtle.speed(0)
     turtle.width(1)
     turtle.hideturtle()
     turtle.bgcolor("black")
     turtle.color("white")
-    draw_heart(16, 13, range(-5, 6))
+    heart(16, 13, range(-5, 6))
     turtle.penup()
     turtle.goto(0, 150)
     turtle.pendown()
-    draw_heart(10, 8, range(-2, 3), y2=150)
+    heart(10, 8, range(-2, 3), y2=150)
     turtle.penup()
     turtle.goto(-10, 160)
     turtle.pendown()
     turtle.color("white")
-    draw_letter_b()
+    l_b()
     turtle.hideturtle()
     turtle.done()
-draw_heart_outline()
+heart_out()
